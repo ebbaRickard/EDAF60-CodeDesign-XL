@@ -54,5 +54,14 @@ B5 = 2, F7 = 3*B5. --> F7 = 6.
 
 Eventuella exceptions: Användaren använder nuvarande rutas address i det aritmetiska uttrycket, användaren matar in för många tecken, användaren trycker på en annan ruta innan den tryckt på enter, användaren försöker dividera med noll. 
 
+![GUI](KlassdiagramGui.png)
+![GUImenu](KlassdiagramGuiMenu.png)
+![util](KlassdiagramUtil.png)
+![Model](KlassdiagramModel.png)
+![expr2](KlassdiagramExpr2.png)
+
+
+
+
 
 
