@@ -58,7 +58,7 @@ Eventuella exceptions: Användaren använder nuvarande rutas address i det aritm
 ![GUI](KlassdiagramGui.png)
 ![GUImenu](KlassdiagramGuiMenu.png)
 ![util](KlassdiagramUtil.png)
-![Model](KlassdiagramModel.png)
+![Model](Model.png)
 ![expr2](KlassdiagramExpr2.png)
 
 
