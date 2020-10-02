@@ -8,16 +8,23 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import gui.menu.XLMenuBar;
 
-public class XL extends JFrame implements Printable {
+import expr.Sheet;
+import gui.menu.XLMenuBar;
+import java.io.IOException;
+
+public class XL extends JFrame implements Printable, Observer {
 
 	private static final int ROWS = 10, COLUMNS = 8;
 	private XLCounter counter;
 	private StatusLabel statusLabel = new StatusLabel();
 	private XLList xlList;
+	private Sheet sheet;
 
 	public XL(XL oldXL) {
 		this(oldXL.xlList, oldXL.counter);
@@ -27,11 +34,21 @@ public class XL extends JFrame implements Printable {
 		super("Untitled-" + counter);
 		this.xlList = xlList;
 		this.counter = counter;
+		sheet = new Sheet();
 		xlList.add(this);
 		counter.increment();
 		JPanel statusPanel = new StatusPanel(statusLabel);
 		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
 		Editor editor = new Editor();
+		editor.addActionListener(e -> {
+			try {
+				sheet.newInput("A1", editor.getText());
+				System.out.println(sheet.get("A1").toString()); 
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		});
+
 		add(NORTH, statusPanel);
 		add(CENTER, editor);
 		add(SOUTH, sheetPanel);
@@ -40,6 +57,7 @@ public class XL extends JFrame implements Printable {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setVisible(true);
+
 	}
 
 	public int print(Graphics g, PageFormat pageFormat, int page) {
@@ -58,6 +76,12 @@ public class XL extends JFrame implements Printable {
 
 	public static void main(String[] args) {
 		new XL(new XLList(), new XLCounter());
+
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// Här ska vyn uppdateras om ändringar gjorts i sheet
 
 	}
 }
