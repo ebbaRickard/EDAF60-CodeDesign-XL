@@ -1,6 +1,11 @@
-package expr;
+package model;
 
 import java.util.TreeMap;
+
+import expr.Environment;
+import expr.Expr;
+import expr.ExprParser;
+
 import java.io.IOException;
 import java.util.Observable;
 

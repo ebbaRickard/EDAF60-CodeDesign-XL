@@ -14,8 +14,9 @@ import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import expr.Sheet;
 import gui.menu.XLMenuBar;
+import model.Sheet;
+
 import java.io.IOException;
 
 public class XL extends JFrame implements Printable, Observer {
