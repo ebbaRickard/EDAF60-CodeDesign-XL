@@ -44,7 +44,8 @@ public class XL extends JFrame implements Printable, Observer {
 		editor.addActionListener(e -> {
 			try {
 				sheet.newInput("A1", editor.getText());
-				System.out.println(sheet.get("A1").toString()); 
+				System.out.println(sheet.toString("A1"));
+				System.out.println(sheet.value("A1"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}

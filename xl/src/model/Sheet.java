@@ -5,39 +5,44 @@ import java.util.TreeMap;
 import expr.Environment;
 import expr.Expr;
 import expr.ExprParser;
+import util.XLException;
 
 import java.io.IOException;
 import java.util.Observable;
 
 public class Sheet extends Observable implements Environment {
 
-	private TreeMap<String, Expr> sheet;
-	private ExprParser exprParser;
+	private TreeMap<String, CellText> sheet;
+	private CellTextFactory cellTextFactory;
 
 	public Sheet() {
 		sheet = new TreeMap<>();
-		exprParser = new ExprParser();
+		cellTextFactory = new CellTextFactory();
 	}
 
 	public void newInput(String adress, String input) throws IOException {
-		sheet.put(adress, exprParser.build(input));
+		CellText oldCellText = sheet.get(adress);
+		sheet.put(adress, new Circular());
+		CellText output = cellTextFactory.build(input);
+		try {
+			output.value(this);
+			sheet.put(adress, output);
+		} catch (RuntimeException e) {
+			sheet.put(adress, oldCellText);
+			System.out.println(e.toString());
+		} 
 	}
 
 	public double value(String adress) { // Returnerar det uträknade värdet som ska visas i cellen
-		Expr expr = sheet.get(adress);
-		return expr.value(this);
+		CellText cellText = sheet.get(adress);
+		return cellText.value(this);
 	}
 
-	public void writeCell(String text, Expr expression) {
-
-		notifyObservers();
+	public String toString(String adress) {
+		return sheet.get(adress).toString();
 	}
-
-	public Expr get(String adress) {
+	
+	public CellText get(String adress) {
 		return sheet.get(adress);
-	}
-
-	private double Calculate() { // ?? Finns inte denna egentligen i get()-metoden
-		return 0;
 	}
 }

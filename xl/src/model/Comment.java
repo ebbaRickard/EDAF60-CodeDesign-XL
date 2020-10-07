@@ -4,15 +4,14 @@ import expr.Environment;
 
 public class Comment implements CellText {
 
-	private double value;
-	private String name;
+	private String comment;
 
 	public Comment(String comment) {
-
+		this.comment = comment;
 	}
 
 	public String toString() {
-		return "";
+		return comment;
 	}
 
 	@Override
