@@ -13,6 +13,8 @@ public class Comment implements CellText {
 	public String toString() {
 		return comment;
 	}
+	
+	
 
 	@Override
 	public double value(Environment e) {

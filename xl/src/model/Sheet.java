@@ -37,6 +37,7 @@ public class Sheet extends Observable implements Environment {
 		CellText cellText = sheet.get(adress);
 		return cellText.value(this);
 	}
+	
 
 	public String toString(String adress) {
 		
