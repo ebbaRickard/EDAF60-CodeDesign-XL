@@ -34,6 +34,7 @@ public class Sheet extends Observable implements Environment {
 		} catch (RuntimeException e) {
 			sheet.put(adress, oldCellText);
 			System.out.println(e.toString());
+			
 		}
 	}
 

@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import gui.*;
 import model.Sheet;
+import util.XLException;
 public class Controller {
 	
 	private Sheet sheet;
@@ -16,6 +17,7 @@ public class Controller {
 	private CurrentLabel currentLabel;
 	private SheetPanel sheetPanel;
 	private Editor editor;
+	private StatusLabel statusLabel;
 	
 	
 	public Controller(Sheet sheet, StatusPanel statusPanel, SheetPanel sheetPanel, Editor editor) {
@@ -30,6 +32,7 @@ public class Controller {
 			    }
 			});
 		}
+		this.statusLabel = statusPanel.getStatusLabel();
 		this.currentLabel = statusPanel.getCurrentLabel();
 		updateCurrentLabel(sheetPanel.getSlotLabels().get(0));
 		
@@ -57,18 +60,21 @@ public class Controller {
 		try {
 			sheet.newInput(markedLabel.getAdress(), s);
 			updateView();
+			statusLabel.setText("");
 		}
 		catch (IOException e){
-		
+
+		}catch(XLException f) {
+			statusLabel.setText("Incomplete Expression");
 		}
-		
-		}
+
+	}
 
 	private void updateView() {
 
 		for (SlotLabel s:sheetPanel.getSlotLabels()) {
 			s.setText(sheet.display(s.getAdress()));
 		}
-		
+
 	}
 }

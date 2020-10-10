@@ -15,4 +15,7 @@ public class StatusPanel extends BorderPanel {
     public CurrentLabel getCurrentLabel() {
     	return (CurrentLabel) this.getComponent(0);  
     }
+    public StatusLabel getStatusLabel() {
+    	return (StatusLabel) this.getComponent(1);
+    }
 }

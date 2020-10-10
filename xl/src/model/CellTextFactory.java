@@ -14,7 +14,7 @@ public class CellTextFactory {
 
 	public CellText build(String input) throws IOException {
 		
-		if(input== "" ) {
+		if(input.isBlank()) {
 			return new Comment(input);
 		}	
 		
