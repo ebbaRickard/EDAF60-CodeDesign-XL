@@ -6,7 +6,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
-import expr.*;
+
 import gui.*;
 import model.Sheet;
 public class Controller {
@@ -50,7 +50,7 @@ public class Controller {
 		markedLabel = slotLabel;
 		markedLabel.setBackground(Color.YELLOW);
 		currentLabel.setText(markedLabel.getAdress());
-		editor.setText("a"); //get raw expression
+		editor.setText(sheet.toString(markedLabel.getAdress())); //get raw expression
 	}
 	
 	private void updateModel(String s) {
@@ -61,6 +61,7 @@ public class Controller {
 		catch (IOException e){
 		
 		}
+		
 		}
 
 	private void updateView() {

@@ -47,15 +47,15 @@ public class XL extends JFrame implements Printable, Observer {
 		SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
 		Editor editor = new Editor();
 		controller = new Controller(sheet, statusPanel, sheetPanel, editor);
-		editor.addActionListener(e -> {
-			try {
-				sheet.newInput("A1", editor.getText());
-				System.out.println(sheet.toString("A1"));
-				System.out.println(sheet.value("A1"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		});
+//		editor.addActionListener(e -> {
+//			try {
+//				sheet.newInput("A1", editor.getText());
+//				System.out.println(sheet.toString("A1"));
+//				System.out.println(sheet.value("A1"));
+//			} catch (IOException e1) {
+//				e1.printStackTrace();
+//			}
+//		});
 
 		add(NORTH, statusPanel);
 		add(CENTER, editor);
