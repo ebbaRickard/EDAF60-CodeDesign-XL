@@ -67,7 +67,7 @@ public class Controller {
 	private void updateView() {
 
 		for (SlotLabel s:sheetPanel.getSlotLabels()) {
-			s.setText(sheet.toString(s.getAdress()));
+			s.setText(sheet.display(s.getAdress()));
 		}
 		
 	}

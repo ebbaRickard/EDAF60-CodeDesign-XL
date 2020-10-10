@@ -10,4 +10,9 @@ public class Circular implements CellText {
 		throw new XLException("Circular expression");
 	}
 
+	@Override
+	public String displayText(Environment e) {
+		return null;
+	}
+
 }

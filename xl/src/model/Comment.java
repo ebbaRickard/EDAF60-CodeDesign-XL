@@ -21,4 +21,9 @@ public class Comment implements CellText {
 		return 0;
 	}
 
+	@Override
+	public String displayText(Environment e) {
+		return comment.substring(1);
+	}
+
 }

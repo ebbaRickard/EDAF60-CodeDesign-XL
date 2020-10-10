@@ -28,6 +28,10 @@ public abstract class Expr implements CellText {
 	 * enclosing expression and is used to control the precedence of parentheses.
 	 */
 	public abstract String toString(int prec);
+	
+	public String displayText(Environment env) {
+		return Double.toString(value(env));
+	}
 
 	/**
 	 * The <code>value</code> method returns the value of this expression.
