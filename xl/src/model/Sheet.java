@@ -46,6 +46,7 @@ public class Sheet extends Observable implements Environment {
 		return "";
 	}
 	
+	
 	public CellText get(String adress) {
 		return sheet.get(adress);
 	}
