@@ -19,4 +19,6 @@ public class ColoredLabel extends JLabel {
         setBackground(color);
         setOpaque(true);
     }
+    
+   
 }

@@ -14,6 +14,9 @@ import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
+import model.Sheet;
+import gui.menu.Controller;
 import gui.menu.XLMenuBar;
 import model.Sheet;
 
@@ -25,6 +28,7 @@ public class XL extends JFrame implements Printable, Observer {
 	private XLCounter counter;
 	private StatusLabel statusLabel = new StatusLabel();
 	private XLList xlList;
+	private Controller controller;
 	private Sheet sheet;
 
 	public XL(XL oldXL) {
@@ -36,11 +40,13 @@ public class XL extends JFrame implements Printable, Observer {
 		this.xlList = xlList;
 		this.counter = counter;
 		sheet = new Sheet();
+		
 		xlList.add(this);
 		counter.increment();
-		JPanel statusPanel = new StatusPanel(statusLabel);
-		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
+		StatusPanel statusPanel = new StatusPanel(statusLabel);
+		SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
 		Editor editor = new Editor();
+		controller = new Controller(sheet, statusPanel, sheetPanel, editor);
 		editor.addActionListener(e -> {
 			try {
 				sheet.newInput("A1", editor.getText());

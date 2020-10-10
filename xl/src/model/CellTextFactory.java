@@ -13,7 +13,8 @@ public class CellTextFactory {
 	}
 
 	public CellText build(String input) throws IOException {
-		if (input.charAt(0)== '#') {
+		
+		if (input== "" || input.charAt(0)== '#') {
 			return new Comment(input);
 		}
 		return exprParser.build(input);

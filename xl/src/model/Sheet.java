@@ -39,7 +39,11 @@ public class Sheet extends Observable implements Environment {
 	}
 
 	public String toString(String adress) {
-		return sheet.get(adress).toString();
+		
+		if (sheet.get(adress)!=null) {
+			return sheet.get(adress).toString();
+		}
+		return "";
 	}
 	
 	public CellText get(String adress) {
