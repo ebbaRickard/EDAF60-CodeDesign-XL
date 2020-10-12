@@ -3,13 +3,13 @@ package model;
 import java.util.TreeMap;
 
 import expr.Environment;
-import expr.Expr;
-import expr.ExprParser;
-import util.XLException;
+
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Observable;
+import java.util.Set;
 
 public class Sheet extends Observable implements Environment {
 
@@ -34,7 +34,6 @@ public class Sheet extends Observable implements Environment {
 			sheet.put(adress, output);
 		} catch (RuntimeException e) {
 			sheet.put(adress, oldCellText);
-			//System.out.println(e.toString());
 			throw e;
 		}
 	}
@@ -73,5 +72,9 @@ public class Sheet extends Observable implements Environment {
 	
 	public void clearAll() {
 		sheet.clear();
+	}
+	
+	public Set<Entry<String, CellText>> entrySet() {
+		return sheet.entrySet();
 	}
 }

@@ -5,9 +5,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-
+import java.util.Map.Entry;
+import java.util.Set;
 
 import gui.*;
+import model.CellText;
 import model.Sheet;
 import util.XLException;
 public class Controller {
@@ -85,5 +87,10 @@ public class Controller {
 	public void clearMarked() {
 		sheet.clear(markedLabel.getAdress());
 		updateView();
+	}
+	
+	public Set<Entry<String, CellText>> save() {
+		return sheet.entrySet();
+		
 	}
 }

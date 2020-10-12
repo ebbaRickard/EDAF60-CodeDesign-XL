@@ -22,7 +22,7 @@ import model.Sheet;
 
 import java.io.IOException;
 
-public class XL extends JFrame implements Printable, Observer {
+public class XL extends JFrame implements Printable {
 
 	private static final int ROWS = 10, COLUMNS = 8;
 	private XLCounter counter;
@@ -80,9 +80,5 @@ public class XL extends JFrame implements Printable, Observer {
 
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// Här ska vyn uppdateras om ändringar gjorts i sheet
 
-	}
 }

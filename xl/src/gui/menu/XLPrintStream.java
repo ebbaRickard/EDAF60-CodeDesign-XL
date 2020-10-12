@@ -5,6 +5,8 @@ import java.io.PrintStream;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import model.CellText;
+
 // TODO move to another package
 public class XLPrintStream extends PrintStream {
 
@@ -13,11 +15,11 @@ public class XLPrintStream extends PrintStream {
     }
 
     // TODO Change Object to something appropriate
-    public void save(Set<Entry<String, String>> set) {
-        for (Entry<String, String> entry : set) {
+    public void save(Set<Entry<String, CellText>> set) {
+        for (Entry<String, CellText> entry : set) {
             print(entry.getKey());
             print('=');
-            println(entry.getValue());
+            println(entry.getValue().toString());
         }
         flush();
         close();
