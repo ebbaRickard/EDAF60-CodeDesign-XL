@@ -12,7 +12,7 @@ class SaveMenuItem extends OpenMenuItem {
     }
 
     protected void action(String path) throws FileNotFoundException {
-        // TODO
+    	new XLPrintStream(path);
     }
 
     protected int openDialog(JFileChooser fileChooser) {

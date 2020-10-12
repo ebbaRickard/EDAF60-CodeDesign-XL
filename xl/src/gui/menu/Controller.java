@@ -65,7 +65,8 @@ public class Controller {
 		catch (IOException e){
 
 		}catch(XLException f) {
-			statusLabel.setText("Incomplete Expression");
+			statusLabel.setText(f.toString());
+			
 		}
 
 	}
@@ -76,5 +77,13 @@ public class Controller {
 			s.setText(sheet.display(s.getAdress()));
 		}
 
+	}
+	public void clearAll() {
+		sheet.clearAll();
+		updateView();
+	}
+	public void clearMarked() {
+		sheet.clear(markedLabel.getAdress());
+		updateView();
 	}
 }

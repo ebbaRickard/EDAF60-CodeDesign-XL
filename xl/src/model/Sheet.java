@@ -8,11 +8,12 @@ import expr.ExprParser;
 import util.XLException;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Observable;
 
 public class Sheet extends Observable implements Environment {
 
-	private TreeMap<String, CellText> sheet;
+	private Map<String, CellText> sheet;
 	private CellTextFactory cellTextFactory;
 
 	public Sheet() {
@@ -33,8 +34,8 @@ public class Sheet extends Observable implements Environment {
 			sheet.put(adress, output);
 		} catch (RuntimeException e) {
 			sheet.put(adress, oldCellText);
-			System.out.println(e.toString());
-			
+			//System.out.println(e.toString());
+			throw e;
 		}
 	}
 
@@ -64,5 +65,13 @@ public class Sheet extends Observable implements Environment {
 
 	public CellText get(String adress) {
 		return sheet.get(adress);
+	}
+	
+	public void clear(String adress) {
+		sheet.remove(adress);
+	}
+	
+	public void clearAll() {
+		sheet.clear();
 	}
 }

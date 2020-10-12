@@ -5,13 +5,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 
 class ClearMenuItem extends JMenuItem implements ActionListener {
+	private Controller controller;
 
-    public ClearMenuItem() {
+    public ClearMenuItem(Controller controller) {
         super("Clear");
+        this.controller = controller;
         addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
-        // TODO
+        controller.clearMarked();
     }
 }

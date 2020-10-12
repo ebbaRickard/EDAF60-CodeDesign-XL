@@ -1,4 +1,4 @@
-package util;
+package gui.menu;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
@@ -13,8 +13,8 @@ public class XLPrintStream extends PrintStream {
     }
 
     // TODO Change Object to something appropriate
-    public void save(Set<Entry<String, Object>> set) {
-        for (Entry<String, Object> entry : set) {
+    public void save(Set<Entry<String, String>> set) {
+        for (Entry<String, String> entry : set) {
             print(entry.getKey());
             print('=');
             println(entry.getValue());
