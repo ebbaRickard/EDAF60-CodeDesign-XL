@@ -106,6 +106,8 @@ public class Controller {
         } catch (IOException e1) {
             // TODO Auto-generated catch blocks
             e1.printStackTrace();
+        } catch (XLException e2) {
+            statusLabel.setText(e2.toString());
         }
         updateView();
         editor.setText(sheet.toString(markedLabel.getAdress()));
