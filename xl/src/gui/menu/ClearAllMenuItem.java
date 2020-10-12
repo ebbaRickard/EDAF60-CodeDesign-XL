@@ -7,7 +7,7 @@ import model.Sheet;
 
 
 class ClearAllMenuItem extends JMenuItem implements ActionListener {
-	private Controller controller;
+    private Controller controller;
 
     public ClearAllMenuItem(Controller controller) {
         super("Clear all");
@@ -16,9 +16,9 @@ class ClearAllMenuItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-    	
+
         controller.clearAll();
     }
-    
-   
+
+
 }

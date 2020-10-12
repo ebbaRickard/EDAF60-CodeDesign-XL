@@ -12,33 +12,33 @@ import model.CellText;
  */
 public abstract class Expr implements CellText {
 
-	/**
-	 * The <code>toString</code> method returns a <code>String</code> representation
-	 * of this expression without unnecessary parentheses.
-	 *
-	 * @return the <code>String</code> representation of this expression.
-	 */
-	public String toString() {
-		return toString(0);
-	}
+    /**
+     * The <code>toString</code> method returns a <code>String</code> representation
+     * of this expression without unnecessary parentheses.
+     *
+     * @return the <code>String</code> representation of this expression.
+     */
+    public String toString() {
+        return toString(0);
+    }
 
-	/*
-	 * toString(prec) returns a string representation of this expression without
-	 * unnecessary parentheses. The prec argument specifies the precedence level
-	 * enclosing expression and is used to control the precedence of parentheses.
-	 */
-	public abstract String toString(int prec);
-	
-	public String displayText(Environment env) {
-		return Double.toString(value(env));
-	}
+    /*
+     * toString(prec) returns a string representation of this expression without
+     * unnecessary parentheses. The prec argument specifies the precedence level
+     * enclosing expression and is used to control the precedence of parentheses.
+     */
+    public abstract String toString(int prec);
 
-	/**
-	 * The <code>value</code> method returns the value of this expression.
-	 *
-	 * @param env is the <code>Environment</code> containing the values of
-	 *            variables.
-	 * @return the <code>double</code> value of this expression.
-	 */
-	public abstract double value(Environment env);
+    public String displayText(Environment env) {
+        return Double.toString(value(env));
+    }
+
+    /**
+     * The <code>value</code> method returns the value of this expression.
+     *
+     * @param env is the <code>Environment</code> containing the values of
+     *            variables.
+     * @return the <code>double</code> value of this expression.
+     */
+    public abstract double value(Environment env);
 }

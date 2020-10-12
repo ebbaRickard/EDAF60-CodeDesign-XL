@@ -9,11 +9,11 @@ public class StatusPanel extends BorderPanel {
         add(WEST, new CurrentLabel());
         add(CENTER, statusLabel);
     }
-    
+
     public CurrentLabel getCurrentLabel() {
-    	return (CurrentLabel) this.getComponent(0);  
+        return (CurrentLabel) this.getComponent(0);  
     }
     public StatusLabel getStatusLabel() {
-    	return (StatusLabel) this.getComponent(1);
+        return (StatusLabel) this.getComponent(1);
     }
 }

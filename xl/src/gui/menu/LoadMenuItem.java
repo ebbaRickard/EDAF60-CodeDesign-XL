@@ -9,8 +9,8 @@ import gui.StatusLabel;
 import gui.XL;
 
 class LoadMenuItem extends OpenMenuItem {
-	
-	private Controller controller;
+
+    private Controller controller;
 
     public LoadMenuItem(XL xl, StatusLabel statusLabel, Controller controller) {
         super(xl, statusLabel, "Load");
@@ -18,10 +18,10 @@ class LoadMenuItem extends OpenMenuItem {
     }
 
     protected void action(String path) throws FileNotFoundException {
-    	XLBufferedReader xlBufferedReader = new XLBufferedReader(path);
-    	Map <String, String> loadMap = new TreeMap<>();
-    	xlBufferedReader.load(loadMap);
-    	controller.loadNewSheet(loadMap);
+        XLBufferedReader xlBufferedReader = new XLBufferedReader(path);
+        Map <String, String> loadMap = new TreeMap<>();
+        xlBufferedReader.load(loadMap);
+        controller.loadNewSheet(loadMap);
     }
 
     protected int openDialog(JFileChooser fileChooser) {

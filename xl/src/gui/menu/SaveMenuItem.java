@@ -6,8 +6,8 @@ import gui.StatusLabel;
 import gui.XL;
 
 class SaveMenuItem extends OpenMenuItem {
-	
-	private Controller controller;
+
+    private Controller controller;
 
     public SaveMenuItem(XL xl, StatusLabel statusLabel, Controller controller) {
         super(xl, statusLabel, "Save");
@@ -15,12 +15,12 @@ class SaveMenuItem extends OpenMenuItem {
     }
 
     protected void action(String path) throws FileNotFoundException {
-    	XLPrintStream xlPrintStream = new XLPrintStream(path);
-    	xlPrintStream.save(controller.save());
+        XLPrintStream xlPrintStream = new XLPrintStream(path);
+        xlPrintStream.save(controller.save());
     }
 
     protected int openDialog(JFileChooser fileChooser) {
         return fileChooser.showSaveDialog(xl);
-        
+
     }
 }

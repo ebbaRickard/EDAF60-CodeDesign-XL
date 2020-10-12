@@ -26,10 +26,10 @@ public class SlotLabels extends GridPanel {
         }
 
     }
-    
+
     public List<SlotLabel> getSlotLabels(){
-    	return this.labelList;
+        return this.labelList;
     }
-    
+
 
 }

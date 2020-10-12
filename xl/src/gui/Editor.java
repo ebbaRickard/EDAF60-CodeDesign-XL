@@ -8,7 +8,7 @@ public class Editor extends JTextField{
     public Editor() {
         setBackground(Color.WHITE);
     }
-    
-    
+
+
 
 }
