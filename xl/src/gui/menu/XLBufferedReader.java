@@ -21,7 +21,7 @@ public class XLBufferedReader extends BufferedReader {
                 String string = readLine();
                 int i = string.indexOf('=');
                 String adress = string.substring(0,i);// TODO
-                String value = string.substring(i);
+                String value = string.substring(i+1);
                 map.put(adress, value);
             }
         } catch (Exception e) {

@@ -5,8 +5,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import gui.*;
 import model.CellText;
@@ -92,5 +94,20 @@ public class Controller {
 	public Set<Entry<String, CellText>> save() {
 		return sheet.entrySet();
 		
+	}
+	public void loadNewSheet(Map <String, String> loadMap) {
+		sheet.clearAll();
+		try {
+			for(Entry<String, String> e: loadMap.entrySet()) {
+
+				sheet.newInput(e.getKey(), e.getValue());
+
+			}
+		} catch (IOException e1) {
+			// TODO Auto-generated catch blocks
+			e1.printStackTrace();
+		}
+		updateView();
+		editor.setText(sheet.toString(markedLabel.getAdress()));
 	}
 }
