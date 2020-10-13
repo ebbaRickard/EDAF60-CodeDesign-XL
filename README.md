@@ -20,6 +20,8 @@ WindowMenu och StatusLable ska vara observers medan Sheet och XLList ska vara Ob
 
 **- Vilket paket och vilken klass skall hålla reda på vad som är “Current slot”?**
 
+Klassen Controller i paketet GUImenu.
+
 **- Vilken funktionalitet är redan färdig och hur fungerar den? Titta på klasserna i view-paketet och testkör.**
 
 Klasser för att skapa expressions, main-metod där den grafiska representationen av ett kalkylark skapas. 
