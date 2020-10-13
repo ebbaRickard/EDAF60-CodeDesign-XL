@@ -8,19 +8,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
-import java.util.Observable;
-import java.util.Observer;
+
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 
 import model.Sheet;
 import gui.menu.Controller;
 import gui.menu.XLMenuBar;
-import model.Sheet;
-
-import java.io.IOException;
 
 public class XL extends JFrame implements Printable {
 
