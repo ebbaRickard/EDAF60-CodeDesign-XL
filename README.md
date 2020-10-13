@@ -57,10 +57,19 @@ B5 = 2, F7 = 3*B5. --> F7 = 6.
 Eventuella exceptions: Användaren använder nuvarande rutas address i det aritmetiska uttrycket, användaren matar in för många tecken, användaren trycker på en annan ruta innan den tryckt på enter, användaren försöker dividera med noll. 
 # Diagram
 
+# Gui
 ![GUI](GuiUML.png)
+
+# Gui.menu
 ![GUImenu](GuiMenuUML.png)
+
+# Util
 ![util](UtilUML.png)
+
+# Model
 ![Model](ModelUML.png)
+
+# Expr
 ![expr2](ExprUML.png)
 
 
