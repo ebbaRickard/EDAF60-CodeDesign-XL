@@ -82,10 +82,12 @@ public class Controller {
         }
 
     }
+    
     public void clearAll() {
         sheet.clearAll();
         updateView();
     }
+    
     public void clearMarked() {
         sheet.clear(markedLabel.getAdress());
         updateView();
@@ -95,6 +97,7 @@ public class Controller {
         return sheet.entrySet();
 
     }
+    
     public void loadNewSheet(Map <String, String> loadMap) {
         sheet.clearAll();
         try {

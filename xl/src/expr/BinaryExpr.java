@@ -1,7 +1,5 @@
 package expr;
 
-import util.XLException;
-
 abstract class BinaryExpr extends Expr {
 
     private Expr expr1;

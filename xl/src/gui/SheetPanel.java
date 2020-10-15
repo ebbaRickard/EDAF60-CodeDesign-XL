@@ -2,10 +2,7 @@ package gui;
 
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.WEST;
-
 import java.util.List;
-
-import gui.menu.Controller;
 
 public class SheetPanel extends BorderPanel {
 
